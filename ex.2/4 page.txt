@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Final page</title>       
+    </head>
+    <body style="background-image: url('tc1.jpg');background-repeat:no-repeat; background-size: 100% 100% ">
+        <br><br><p style="text-align: center; color:black; font-size: 60px; font-weight: 50px">PAYMENT SUCCESSFULLY DONE<br> THANK YOU!<br><br></p><br>
+    <center>
+        <video autoplay="autoplay" loop="loop" controls="controls" muted="muted">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </center>
+    </body>
+</html>

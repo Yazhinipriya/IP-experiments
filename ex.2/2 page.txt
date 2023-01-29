@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        
+    </head>
+    <body
+        
+ style="background-image: url('theatre.jpg');
+  background-repeat: no-repeat;
+  height:100%;
+  background-size: cover;"
+>  
+      <h1 style= "font-family: futura; color:white; text-align: center">TICKET DETAILS</h1>
+        <hr style=
+          "height: 2px;
+           background: white;
+           margin: 20px 0;
+           box-shadow:0px 0px 4px 2px #ff9933"><br>
+        <table align='center'>
+            <tr>
+             <th style= "font-size: 20px; color:white"><label for="name">NAME</label></th>
+             <td style=' font-size: 20px;'>
+                 <input type="text" name="1">
+             </td>
+            </tr>
+
+            <tr>
+               <th style= "font-size: 20px;color:white"><label for="PHONE">PHONE NO</label></th>
+               <td style='font-size: 20px;'>
+                 <input type="number" name="2" >
+               </td>
+            </tr>
+            <tr>
+               <th style= "font-size: 20px; color:white"><label for="NO.OF SEATS">NO.OF SEATS</label></th>
+               <td style='font-size: 20px;'>
+                 <input type="number" name="3" >
+               </td>
+            </tr>
+             <tr>
+                <th style= "font-size: 20px; color:white"><label for="time">SHOW TIME</label></th>
+               <td style="font-size: 20px; color:white">
+                   <input type="radio" name="4" >4:00 AM<br>
+                   <input type="radio" name="4"> 6:00 AM<br>
+                   <input type="radio" name="4"> 11:00 AM<br> 
+                   <input type="radio" name="4" >2:00 PM<br>
+                   <input type="radio" name="4"> 6:00 PM<br>
+               </td>
+             </tr>
+             <tr>
+                <th style= "font-size: 20px; color:white"><label for="date">SHOW DATE</label></th>
+               <td style="font-size: 20px; color:white">
+                   <input type="date" name="6" >
+                  
+               </td>   
+            <tr>
+                <th style= "font-size: 20px; color:white"><label for="payment">PAYMENT<br>METHOD</label></th>
+               <td style="font-size: 20px; color:white">
+                   <select name="paymentmethod" id="name">
+                       <option name="visa">DEBIT CARD</option>
+                       <option name="credit">CREDIT CARD</option>
+                       <option name="upi">UPI</option>
+                   </select>                     
+               </td>
+            </tr><br>
+
+            <tr>
+                <th style= "font-size: 20px; color:white"><label for="ticket">TICKET<br>SEATING</label></th>
+               <td style="font-size: 20px; color:white">
+                   <input type="radio" name="5" >GENERAL - 100<br>
+                   <input type="radio" name="5"> FULL ROCKER - 110<br>
+                   <input type="radio" name="5"> PREMIUM GLIDER - 150<br> 
+                   <input type="radio" name="5" >FIXED BACK - 190<br>
+                   <input type="radio" name="5"> BALCONY-   250<br>
+                  
+               </td>
+            </tr>
+         
+        </table><br>
+ 
+    <center>
+        <img src="seat.jpg" width="400" height="400" >
+    </center><br> 
+
+    <center>
+        <a href="payment.html" target="_blank">
+        <button type="button" style="font-size: 20px">
+        PROCEED TO PAY
+        </button>
+        </a>
+    </center>  
+    </body>
+</html>
+ 

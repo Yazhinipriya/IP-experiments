@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>supply a title</title>
+        
+    </head>
+    <body
+        
+ style="background-image: url('theatre.jpg');
+  background-repeat: no-repeat;
+  height:100%;
+  background-size: cover;"
+>  
+        <h1 style="text-align: center; color: white;"> BOOK YOUR SHOW</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 style= "color: white;"> CHOOSE MOVIE</h2>
+        <label for ="movies"></label>
+        <select id="movies" name="movies">
+            <option value="varisu">varisu</option>
+            <option value="varisu">thunivu</option>
+            <option value="varisu">avengers</option><!-- comment -->
+            <option value="varisu">avatar</option><!-- comment -->
+            <option value="varisu">war</option><!-- comment -->
+            <option value="varisu">the conjuring</option><!-- comment -->
+            <option value="varisu">joker</option><!-- comment -->
+            <option value="varisu">jurassic park</option>
+            
+            <option value="varisu">the rock</option><!-- comment -->
+            <option value="varisu">end game</option><!-- comment -->
+            <option value="varisu">dora</option>
+            
+        </select>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3 style="color:white;"> RECOMMENDED MOVIES</h3>
+         <img src="jurassic.jpg" width="250" height="250">  
+   
+        <img src ="avatar.jpg" width="250" height="250">  
+            
+     <img src ="joker.jpg" width="250" height="250">  
+       <img src ="avengers.jpg" width="250" height="250">  
+         <img src ="conjuring.jpg" width="250" height="250"> 
+           <img src ="war.jpg" width="200" height="250">  
+    <br>
+        <br>
+        <br>
+        <br>
+    <center>   
+        <a href="ticket.html" target="_blank"> <img src ="book.jpg" width="200" height="150">
+            
+        </a>
+     
+ <br>
+ <br>
+ 
+ 
+    </body>
+</html>

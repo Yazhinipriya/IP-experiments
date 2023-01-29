@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PAYMENT</title>
+    </head>
+    <body style="background-color: coral">
+        <h1 style="text-align: center; color:white; font-size: 50px">PAYMENT DETAILS</h1>
+        
+        
+        <!--CREDIT/DEBIT CARD TABLE-->
+        <br><h1 style="text-align:center; color:black; font-size:35px; ">CREDIT-CARD / VISA/NETBANKING:</h1>        
+        <table align="center" >
+             <tr>
+                <th style= "font-size: 20px; color:white"><label for="name">CARD HOLDER'S NAME</label></th>
+             <td style=' font-size: 20px;'>
+                 <input type="text" name="1">
+             </td>
+            </tr> 
+              <tr>
+                <th style= "font-size: 20px; color:white"><label for="name1">BANK NAME</label></th>
+             <td style=' font-size: 20px;'>
+                 <input type="text" name="4">
+             </td>
+            </tr>               
+            <tr>
+                <th style= "font-size: 20px; color:white"><label for="CARD">CARD NUMBER</label></th>
+             <td style=' font-size: 20px;'>
+                 <input type="text" name="2">
+             </td>
+            </tr>
+            
+             <tr>
+                <th style= "font-size: 20px; color:white"><label for="date">VALID UNTIL</label></th>
+             <td style=' font-size: 20px;'>
+                 <input type="month" name="3">                 
+             </td>
+            </tr>
+            
+             <tr>
+                <th style= "font-size: 20px; color:white"><label for="cv">CV</label></th>
+             <td style=' font-size: 20px;'>
+                 <input type="number" name="4">                 
+             </td>
+            </tr>
+            
+            <tr>
+                <th style= "font-size: 20px; color:white"><label for="amt">AMOUNT</label></th>
+             <td style=' font-size: 20px;'>
+                 <input type="number" name="5">                 
+             </td>
+            </tr>
+            
+             <tr>
+             <td style=' font-size: 20px;' align="center">
+                <button type="button" name="cancel"> Cancel</button>                
+             </td>
+             <td style=' font-size: 20px;'>
+                 <a href="fifthpage.html" target="_blank">
+                    <button type="button" name="submit">Submit</button>     
+                 </a>
+             </td>
+             
+            </tr>
+        </table>
+       <br>
+
+        <div style="text-align: center">
+            <a href="final page.html" target="_blank">
+                <button type="button" style="align: center">Proceed</button>
+            </a>
+            
+        </div>
+
+    </body>
+</html>
+
