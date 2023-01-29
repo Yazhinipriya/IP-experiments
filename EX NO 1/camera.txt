@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Camera</title>
+    </head>
+    <body style="background:url('campic.jpg') no-repeat; background-size: 100% 100%;">
+        <h1 style="text-indent:2%">CAMERA:</h1>
+        <ul style="font-family: sans-serif; font-size: medium">
+            <li>A camera is an optical instrument that captures images.</li>
+            <li> Most cameras can capture 2D images, while some <br>more advanced models can capture 3D images.</li>
+            <li>At a basic level, most cameras consist of a sealed box (the camera body),<br> with a small hole (the aperture) that allows light to pass through and <br>capture an image on a light-sensitive surface (usually a digital sensor<br> or photographic film).</li>
+            <li> Cameras have various mechanisms to control how light falls onto the <br>light-sensitive surface, including lenses that focus the light and a shutter<br> that determines the amount of time the photosensitive surface is exposed to the light.</li>
+        </ul>
+        <h1 style="text-indent: 2%">HISTORY OF CAMERA:</h1>
+        <ul style="font-family: sans-serif; font-size: medium">
+            <li>The forerunner to the photographic camera was the camera obscura.</li>
+            <li>Camera obscura (Latin for "dark room") is the natural optical phenomenon that occurs when an image of a<br> scene at the other side of a screen (or for instance a wall) is projected through a small hole in that <br>screen and forms an inverted image (left to right and upside down) on a surface opposite to the opening.</li>
+        </ul>
+        <h1 style="text-indent: 2%">MECHANICS:</h1>
+        <ul style="font-family: sans-serif; font-size: medium">
+            <li>Most cameras capture light from the visible spectrum, while specialized<br> cameras capture other portions of the electromagnetic spectrum, such as infrared</li>
+            <li>All cameras use the same basic design: light enters an enclosed box through a converging or convex lens<br> and an image is recorded on a light-sensitive medium.</li>
+            <li>A shutter mechanism controls the length of time that light enters the camera.</li>
+        </ul>
+       
+    </body>
+</html>

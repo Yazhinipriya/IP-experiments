@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise 1</title>       
+    </head>
+    <body style="background-color: cadetblue">
+        <h1 style="font-family: sans-serif; text-align: center; color: whitesmoke">ELECTRONIC GADGETS</h1>
+        <br><center><img src="ex1pic.JPG" alt="No image to be displayed" usemap="#imagemapping"></center>
+        <map name="imagemapping">
+            <area shape="rect" coords="211,256,312,313" alt="No image" href="camera.html" target="_blank">
+            <area shape="rect" coords="2,114,157,192" alt="No image" href="keyboard.html" target="_blank">
+            <area shape="poly" coords="327,227,342,182,370,158,400,172,435,174,443,206,430,247,407,222,368,215" alt="No image" href="joystick.html" target="_blank">
+        </map>
+    <h1 style="font-family: sans-serif; text-align: center; color: whitesmoke;font-size: 20px">
+        MAPPED GADGETS:</h1>
+        <div style="text-align: center;font-family: cursive;font-size: 20px;text-indent: 2%">
+            <pre>
+                &diam;Camera
+                &nbsp;&nbsp;&nbsp;&nbsp;&diam;Keyboard
+                &nbsp;&nbsp;&nbsp;&nbsp;&diam;JoyStick
+            </pre>  
+        </div>
+    </body>
+</html>

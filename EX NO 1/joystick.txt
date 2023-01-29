@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Joystick</title>
+    </head>
+    <body style="background:url('joystick.jpg') no-repeat; background-size: 100% 100%;">
+        <h1 style="text-indent:2%">JOYSTICK:</h1>
+        <ul style="font-family: sans-serif; font-size: medium">
+            <li>The Joystick is capable of providing vibration feedback based on onscreen actions taking place in a game<br>(if the game supports this feature), and provides analog input through two analog sticks.</li>
+            <li>The JoyStick, and its following designs also includes a direction pad, Start and Select button, and four face<br>buttons with labelling, which was first introduced on the original PlayStation controller.</li>
+            <li>The original PlayStation is forward compatible with the JoyStick 2. The PlayStation 3 is backward compatible<br>with the JoyStick and JoyStick 2 by the use of third party peripherals.</li>
+        </ul> 
+        <h1 style="text-indent:2%">DESIGN:</h1>
+        <ul style="font-family: sans-serif; font-size: medium">
+            <li>Both Goto and Kutaragi recalled that Sony president Norio Ohga showed a special interest in the development<br>of the controller, and strongly supported the final version.</li>
+            <li>On April 2, 1996 in Japan, Sony released a revised version of the PlayStation controller (model SCPH-1080)<br>which is 10% larger than the launch model and features a longer cord with a ferrite bead.</li>
+            <li>This model was bundled with all subsequent PlayStation consoles, including the North American and<br>European launch models (which were already introduced a year prior in September 1995).</li>
+            <li>After briefly selling the Dual Analog Controller in 1997, Sony began phasing out the PlayStation controller<br>later that year with the introduction of the DualShock controller, which would become the new standard<br>controller for the PlayStation, although the first game to require its use, Ape Escape, would only be released<br>two years later.</li>
+        </ul>
+        <h1 style="text-indent:2%">DESIGN:</h1>
+        <ul style="font-family: sans-serif; font-size: medium">
+            <li>Based on the basic button configuration established with Nintendo's Super NES Controller,the PlayStation<br>controller added a second pair of shoulder buttons for the middle fingers.</li>
+            <li>Using the simple geometric shapes of a green triangle, a red circle, a blue cross, and a pink square to label<br>its action buttons rather than traditionally used letters or numbers, the PlayStation controller established a<br>trademark which would be incorporated heavily into the PlayStation brand.</li>
+            <li>The PlayStation 2 console is backwards-compatible with the original PlayStation controller, with limited<br>functionality due to a lack of analog sticks and pressure-sensitive buttons.</li>
+        </ul>
+        </body>
+</html>
