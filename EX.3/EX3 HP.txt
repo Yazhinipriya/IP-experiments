@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EasyBuy</title>   
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            button{
+                background-color: #ffeva9;
+                border:none;
+                width:6%;
+                font-family:times_new_roman; 
+                font-size:20px;
+                margin-top: 1px;
+                margin-right: 30px;
+                position:absolute;
+                top:20px;
+                right:40px;
+                cursor:pointer;
+                border-style: solid;
+                border-radius: 10px;
+                border-color: #bdbd09;
+                }
+            .button:hover{
+                background-color: #99ccff;
+                border-color:#99ccff;
+            }
+            #cf {
+                position: relative;
+                margin-left: 11px;
+                position:absolute;
+                top:0;
+                left:0;
+                width: 100px;
+                height: 100px;
+            }
+            #cf img {
+                position: absolute;
+                left: 0;
+                -webkit-transition: opacity 1s ease-in-out;
+                -moz-transition: opacity 1s ease-in-out;
+                -o-transition: opacity 1s ease-in-out;
+                transition: opacity 1s ease-in-out;
+            }
+            #cf img {
+                animation-name: cf3FadeInOut;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+                animation-duration: 8s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+            }
+            #cf img:nth-of-type(1) {
+                animation-delay: 6s;
+            }
+            #cf img:nth-of-type(2) {
+                animation-delay: 5s;
+            }
+            #cf img:nth-of-type(3) {
+                animation-delay: 4s;
+            }
+            #cf img:nth-of-type(4) {
+                animation-delay: 3s;
+            }
+            #cf img:nth-of-type(5) {
+                animation-delay: 2s;
+            }
+            @keyframes cf3FadeInOut {
+            0% {
+                opacity: 1;
+               }
+            17% {
+                opacity: 1;
+                }
+            25% {
+                opacity: 0;
+                }
+            92% {
+                opacity: 0;
+                }
+            100% {
+                opacity: 1;
+                }
+            }
+            .fix{
+            position:fixed;
+            top:60px;
+            right:10px;
+            width:200px;
+            height:200px;
+            }
+            table,th,td{
+                border:solid;
+                border-collapse: collapse;
+                width:60%;
+                text-align: center;
+                vertical-align: middle;
+                color:#c9a203;
+            }
+        </style>
+        <style>
+    .popup{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: none;
+        justify-content: right;
+        align-items: center;
+    }
+    .pop_content{
+        height: 250px;
+        width: 500px;
+        background-color:#f6d75a;
+        background-repeat: no-repeat;
+        padding: 20px;
+        border-radius: 5px;
+        position: fixed;
+    }    
+</style>
+
+    </head>
+    <body>
+         <div class="container">
+            <h1>Easy Buy</h1>
+            <h5>Cheap as chips...Shop till you drop!</h5>
+        </div>
+        <div class="fill">
+         <a href="#" id="button"> <img src="logo.png" alt="slide" height="100" width="100" class="fix"/>
+         </a> 
+        </div>
+        <div class="popup">
+            <div class="pop_content">
+                <center>
+                    <a href="details.html" style="color:black;text-decoration: none;float: left;">Back</a>
+                    <h2 style="color:black">PERSONAL DETAILS</h2>
+                    <form action="ex3.html">
+                      <label for="uname"><b>NAME</b></label>
+                        <input type="text" placeholder="NAME" name="uname" required>
+                        <br>
+                        <br>
+                        <label for="uname"><b>ADDRESS</b></label>
+                        <input type="text" placeholder="ADDRESS" name="add" required>
+                        <br>
+                        <br>
+                        <label for="uname"><b>PREFERENCES</b></label>
+                        <input type="text" placeholder="PREFERENCES" name="PF" required>
+                        <br>
+                        <br>
+                        <button type="submit">OK</button>
+                        <br>
+                        <br>
+                    </form>
+                    </center>
+            </div>
+        </div>
+        <script>
+            document.getElementById("button").addEventListener("click",function(){
+                document.querySelector(".popup").style.display = "flex";
+            });
+        </script>
+
+        <link href="ex_3css.css" rel="stylesheet">
+        <div class="tabs">           
+        <input name="tabs" type="radio" id="tab-1" checked="checked" class="input"/>
+        <label for="tab-1" class="label">ABOUT US</label>
+        <div class="panel">
+        <div class="container1">    
+        <div class="card">
+  <img src="jeans3.webp" alt="Denim Jeans" style="width:100%;height: 50%"/>
+  <h2>Jeans</h2>
+  <p class="price">Rs.1200</p>
+  <p>Torn Women jeans</p>
+  <p><button1>Add to Cart</button1></p></div>  
+ <div class="card">
+ <img src="kurta.jpg" alt="Kurta" style="width:100%;height: 50%"/>
+  <h2>Kurthi</h2>
+  <p class="price">Rs.800</p>
+  <p>Closed neck kurthi</p>
+  <p><button1>Add to Cart</button1></p></div>
+  <div class="card">
+  <img src="colorbar.jpeg" alt="Lipstick" style="width:100%;height: 50%"/>
+  <h2>Colorbar Lipstick</h2>
+  <p class="price">Rs.450</p>
+  <p>Smudge proof lipstick</p>
+  <p><button1>Add to Cart</button1></p></div>
+  <div class="card"><br><br>          
+  <img src="menwear.jpg" alt="MenWear" style="width:100%;height: 50%"/>
+  <h2>Men's Shirt</h2>
+  <p class="price">Rs.500</p>
+  <p>Golden Brown Men's stylish Shirt</p>
+  <p><button1>Add to Cart</button1></p></div>
+  <div class="card"><br><br>
+  <img src="adidas.webp" alt="Sports shoe" style="width:100%;height:50%"/>
+  <h2>Sports shoe</h2>
+  <p class="price">Rs.1500</p>
+  <p>Men White Adidas Sports shoe</p>
+  <p><button1>Add to Cart</button1></p></div>
+  <div class="card"><br><br>
+  <img src="hair.webp" alt="hair appliances" style="width:100%;height:50%">
+  <h2>Hair Appliances</h2>
+  <p class="price">Rs.3500</p>
+  <p>Pack of straightener and Drier</p>
+  <p><button1>Add to Cart</button1></p></div>
+  <div class="card"><br><br>
+  <img src="fridge.jpg" alt="Fridge" style="width:100%;height:50%"/>
+  <h2>Refrigerator</h2>
+  <p class="price">Rs.40,000</p>
+  <p>Silver finish four door fridge</p>
+  <p><button1>Add to Cart</button1></p></div>
+  <div class="card"><br><br>
+  <img src="apple.jpeg" alt="Apple iphone" style="width:100%;height: 50%"/>
+  <h2>Apple iPhone</h2>
+  <p class="price">Rs.80,000</p>
+  <p>Purple Apple iPhone 13</p>
+  <p><button1>Add to Cart</button1></p></div>
+  <div class="card"><br><br>
+  <img src="kids.jpg" alt="Kids Wear" style="width:100%;height:50%"/>
+  <h2>Kids Wear</h2>
+  <p class="price">Rs.800</p>
+  <p>Blue elegant kids Frock</p>
+  <p><button1>Add to Cart</button1></p></div>
+        </div>
+        <h2>WHO ARE WE?</h2>
+        <P>EASY BUY is our private label – that’s designed by us, and owned by you. If you’re looking for head-turning styles that are one-of-a-kind, EASY BUY is what you should stock up on.</p>
+        <p>Since our launch, we have not only redefined the art of e-retailing beauty and personal care in India, but also have been instrumental in fostering the growth of a previously relatively nascent ecosystem. From bringing you 
+            domestic brands, international brands, luxury and prestige brands, premium brands,
+            niche and cult brands and expert advice and videos , coupled with our understanding of the needs and preferences of the consumers.</p>
+        <h2>OUR VISION:</h2>
+        <p>Bring inspiration and joy to people, everywhere, everyday.</P>
+        <h2>CONTACT US:</h2>
+        <p>Online shopping is taking over the market faster than one can comprehend. That being said, no one else knows or understands the retail market better than EASY BUY.
+            Shopping online can sometimes be tedious and difficult, however with an attractive design, our online fashion destination is easy to navigate making your experience delightful.</p>
+        <h4>OUR ADDRESS:</h4>
+        <pre style="font-family: times_new_roman">
+        Easy Buy Limited,
+        Grace Towers,
+        K.K Nagar,
+        Madurai 625001.</pre>
+        <h2>NEED HELP!!</h2>
+        <pre style="font-family: times_new_roman">
+        Call us at Customer Care no. : 1800-419-6648
+        Email us at: customercare@easybuy.com
+        (Operational Timings: 08:00AM to 10:00PM)
+        </pre>
+        <h2>WHY CHOOSE US?</h2>
+      <h3>EASY BUY is specially curated to help you find the best products for all your shopping needs</h3>
+      <br>
+      <pre style="font-family: times_new_roman">
+      <i class="material-icons">paid</i>     Pay on delivery<br><br>
+      <i class="material-icons">verified</i>     100% Authentic<br><br>
+      <i class="material-icons">description</i>      Clear Description<br><br> 
+      <i class="material-icons">fingerprint</i>     Secured
+      </pre></div>
+      <input name="tabs" type="radio" id="tab-2" class="input"/>
+        <label for="tab-2" class="label">OFFERS</label>
+        <div class="panel">
+            <table align="center">
+                <tr>
+                    <th style= "font-size: 30px; ">PRODUCTS</th>
+                    <th style= "font-size: 30px; ">OFFERS</th>
+                </tr> 
+                <tr>
+                    <td style="align-content:center"><br><img src="offer1.jpg" width="200" height="200"><br>
+                    <p style="font-size: 20px;color:#c9a203;">FOOTWEAR</p></td>
+                    <td style="font-size:18px;">50%-60%<br>ADIDAS<BR>NIKE<br>PUMA<br>BATA<br>CROCS<br>ALL AVAILABLE!</td>
+                </tr>
+                 <tr>
+                     <td style="align-content:center"><br><img src="dress1.jpg" width="200" height="200"><br>
+                    <p style="font-size: 20px;color:#c9a203;">DRESSES</p></td>
+                     <td style="font-size:18px">40%-50%<br>MEN<br>WOMEN<br>CHILDREN<br>ALL AGES!</td>
+                </tr>
+                <tr>
+                     <td style="align-content:center"><br><img src="app.jpg" width="200" height="200"><br>
+                    <p style="font-size: 20px;color:#c9a203;">APPLIANCES</p></td>
+                     <td style="font-size:18px">Upto 70%<br>BOSCH<br>HAIER<br>LG<br>SONY</td>
+                </tr>
+                <tr>
+                     <td style="align-content:center"><br><img src="gadget1.jpg" width="200" height="200"><br>
+                    <p style="font-size: 20px;color:#c9a203;">GADGETS</p></td>
+                     <td style="font-size:18px">Flat 50%<br>EMI PLANS JUST FROM RS.1999/-<br>EXCHANGE OFFERS AVAILABLE TOO!</td>
+                </tr>
+                <tr>
+                     <td style="align-content:center"><br><img src="makeup1.jpg" width="200" height="200"><br>
+                    <p style="font-size: 20px;color:#c9a203;">MAKEUP</p></td>
+                     <td style="font-size:18px">70-80%<br>ALL PRODUCTS WITH<br>REASONABLE RATES!</td>
+                </tr>
+            </table>
+            <p STYLE="font-size: 40px;color:#c9a203;text-align: center">HURRY UP! OFFER ENDS IN 2 DAYS!!</p>
+        </div>              
+    <div>
+            <a href="signup.html">
+            <button class="button">Login</button>
+        </a>
+    </div>
+    <div id="cf">
+            <img class="top" src="gadgets.png" height='290' width='200' />
+            <img class="bottom" src="dresses.jpg" height='290' width='200'/>
+            <img class="top" src="appliances.jpg" height='290' width='200'/>
+            <img class="bottom" src="footwear.jpg" height='290' width='200'/>
+            <img class="top" src="makeup.jpg" height='290' width='200'/>
+    </div></div>
+    </body>
+    </html>

@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  align-content: center;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+  background:#111;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 2500px;
+  background: #ffe479;
+  box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
+  min-height: 200px;
+  clear: both;
+  padding-left: 200px;
+  padding-right:200px;
+  
+  
+}
+.input {
+  position: fixed;
+  opacity: 0;
+}
+.label {
+  width: 100%;
+  padding: 20px 30px;
+  background: #ffeda9;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  color:black;
+  transition: background 0.1s, color 0.1s;
+  }
+
+.label:hover {
+    background:#f6d75a;
+    color:black;
+}
+
+.label:active {
+    background:#f6d75a;
+}
+
+.input:focus + .label {
+    box-shadow: inset 0px 0px 0px 3px #c19b05; 
+  z-index: 1;
+} 
+
+.input:checked + .label {
+    background:#ffeda9;
+  color: #000;
+}
+
+@media (min-width: 600px) {
+  .label {
+    width: auto;
+  }
+}
+.panel {
+  display: none;
+  padding: 20px 30px 30px;
+  background:white;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  
+}
+
+@media (min-width: 600px) {
+  .panel {
+    order: 99;
+  }
+}
+
+.input:checked + .label + .panel {
+  display: block;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  width: 100%;
+  height: 39vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 100px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: "wght" 311;
+  color: PaleGoldenRod;
+  outline: none;
+  text-align: center;
+  margin-bottom:0;
+}
+h5 {
+  font-size: 30px;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -2px;
+  color: PaleGoldenRod;
+  outline: none;
+  text-align: center;
+  margin-top: 0;
+}
+
+h1:hover {
+  font-variation-settings: "wght" 582;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 150%;
+  text-align: center;
+  color:#111;
+  letter-spacing: .5px;
+}
+
+.container1{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  margin: 0px;
+  text-align: center;
+  font-family: arial;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button1 {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+
