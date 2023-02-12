@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS</title>
+        
+    </head>
+    <body>
+        <h1>COMPUTING SUM AND ARRAY</h1>
+        <p>ARRAY</p>
+        <p id="demo"></p>
+        <p>SUM:</p>
+        <p id="demo1"></p>
+        <p>PRODUCT:</p>
+        <p id="demo2"></p>
+       <script>
+        var array=[];
+        var arraysize=prompt("Enter the array size:");
+        for(j=0;j<arraysize;j++)
+        {
+            array[j]=prompt('Enter the array:' + (j+1) );    
+        };
+        document.getElementById("demo").innerHTML=array;
+        
+        function findSum(arrays,arrsize) {
+            let sum=0;
+            for (let j = 0; j<arrsize; j++) {
+                sum = sum + arrays[j];
+            }
+            return sum;
+        }
+        document.getElementById("demo1").innerHTML="THE SUM OF THE ARRAY IS: " +findSum(array,arraysize);
+        
+        function findProduct(arr,size) {
+            let result = 1;
+            for(let j=0; j<size; j++) {
+                result = result * arr[j];
+            }
+            return result;
+        }            
+        document.getElementById("demo2").innerHTML="THE PRODUCT OF THE ARRAY IS:" +findProduct(array,arraysize);
+       </script>
+    </body>
+</html>

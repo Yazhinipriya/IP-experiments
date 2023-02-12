@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        
+    </head>
+    <body style="background-image: url('cars.jpg'); background-repeat: no-repeat; background-size:100%">
+        <h2 style="text-align: center; color:white">SORTING AN ARRAY OF OBJECTS</h2>
+        <p style="font-size:30px;font-weight: bolder; color:white">SORTING CAR OBJECTS BASED ON PRICE:<br><br>
+                  ARRAY BEFORE SORTING:</p>
+        <p style="font-size:30px;font-weight: bolder; color:white" id="sort"></p>
+        <p style="font-size:30px;font-weight: bolder; color:white">ARRAY AFTER SORTING:</p>
+        <p style="font-size:30px;font-weight: bolder; color:white" id="demo"></p>
+        <script>
+            const cars=[
+                {
+                    Name:"MARUTI SUZUKI BREZZA",
+                    Color:"BLUE",
+                    Price:1500000
+                },
+                {
+                    Name:"FORD FIESTA CLASSIC",
+                    Color:"GREY",
+                    Price:500000
+                },
+                {
+                    Name:"JEEP GRAND CHEROKEE L 2023",
+                    Color:"MAROON",
+                    Price:8500000
+                },
+                {
+                    Name:"RENAULT KWID",
+                    Color:"BLACK",
+                    Price:630000
+                },
+                {
+                    Name:"VOLKSWAGEN TIGUAN",
+                    Color:"WHITE",
+                    Price:3350000
+                }
+                
+            ];          
+            function compare( a, b ) {
+                return a.Price-b.Price;
+            }
+            document.getElementById("sort").innerHTML=JSON.stringify(cars);
+            document.getElementById("demo").innerHTML = JSON.stringify(cars.sort(compare),null,5);
+          
+            
+        </script>
+    </body>
+</html>

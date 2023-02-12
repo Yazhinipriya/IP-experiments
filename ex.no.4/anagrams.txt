@@ -1,0 +1,51 @@
+  <!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        
+    </head>
+    <body>
+        <h1>CHECKING ANAGRAM</h1>
+        <h2>THE ENTERED STRING1:</h2>
+        <p id="demo"></p>
+        <h2>THE ENTERED STRING2:</h2>
+        <p id="demo1"></p>
+        <h2>THE ENTERED STRING1 LENGTH:</h2>
+        <p id="demo2"></p>
+         <h2>THE ENTERED STRING1 LENGTH:</h2>
+         <p id="demo3"></p>
+         <h2>AFTER SORTING</h2>
+         <h2>STRING1 :</h2>
+          <p id="demo4"></p>
+          <h2>STRING2 :</h2>
+          <p id="demo5"></p>
+          <p id="demo6"></p>
+        <script> 
+        var string1=prompt("Enter String 1:");
+        var string2=prompt("Enter String 2:");
+        document.getElementById("demo").innerHTML=string1;
+        document.getElementById("demo1").innerHTML=string2;
+        function StringsAnagram(a, b) {
+        let len1 = a.length;
+        let len2 = b.length;
+         document.getElementById("demo2").innerHTML=len1;
+          document.getElementById("demo3").innerHTML=len2;
+        if(len1 !== len2){
+            document.getElementById("demo4").innerHTML='Invalid Input';
+        return;
+        }
+        let str3 = a.split('').sort().join('');
+        let str4 = b.split('').sort().join('');
+         document.getElementById("demo4").innerHTML=str3;
+         document.getElementById("demo5").innerHTML=str4;
+        if(str3 === str4){
+            document.getElementById("demo6").innerHTML='TWO STRINGS ARE ANAGRAMS';
+        }        
+        else { 
+            document.getElementById("demo6").innerHTML='TWO STRINGS ARE NOT ANAGRAMS';
+        }
+        }
+       StringsAnagram(string1,string2);
+</script>
+    </body>
+</html>
