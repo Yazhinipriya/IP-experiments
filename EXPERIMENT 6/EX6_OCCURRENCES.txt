@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EX_6</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#but1").click(function display() {
+                    var str = $("#str").val();
+                    alert("The entered sentence is " +str);
+                });
+                $("#but2").click(function clicked() {
+                    var str = $("#str").val();
+                    var inputString = $("#name").val();
+                    if (str.indexOf(inputString) > -1) {
+                        alert('String contains the word ' + inputString);
+                        return true;
+                    } else {
+                        alert('String does not contain the word ' + inputString);
+                        return false;
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body
+        style="background-color: lightpink;
+        text-align: center;
+        font-family: courier new">
+    <center>
+        <h2>CHECKING OF OCCURRENCE OF A PARTICULAR WORD IN A SENTENCE:</h2>
+        Enter a sentence: <input type="text" id="str">
+        <button id="but1" onclick="display">DISPLAY</button><br><br>
+        Enter a word to be found: <input type="text" id="name">
+        <button id="but2" onclick="clicked">CLICK</button>
+    </center>
+    </body>
+</html>

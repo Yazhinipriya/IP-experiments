@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EX6</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            button{
+                font-size: 0.5em;
+                padding: 0.9em;
+                background-color:#990099;
+                color:white;
+                font-family: courier new;
+            }
+            li {
+                margin: 10px 0;
+                padding: 10px;
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+            }
+            
+            body{
+                background-color:#ff66ff;
+                font-family:courier new;
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 style="color:#330033; text-align: center">THE UNORDERED LIST IS AS FOLLOWS:</h2>
+        <ul id="list" style="list-style-position: inside">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    <center>
+        <button style="font-size: 0.5em">ADD ITEM</button>
+    </center>
+        <script>
+            $(document).ready(function () {
+                $("button").click(function () {                   
+                    var num = Math.floor(Math.random() * 10) + 1;                   
+                    var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                    var newItem = "<li style='background-color: " + color + ";'>" + num + "</li>";
+                    $("#list").append(newItem);
+                });
+            });
+        </script>
+    </body>
+</html>
