@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <style>
+           
+            body{
+                background-color:pink;
+                font-family:courier new;
+                font-size:30px;
+                margin-top:280px;
+             
+            }
+            </style>
+    </head>
+    <body>
+    <center>
+        <form action="http://localhost:8080/WebApplication4/NewServlet" method="get">
+            Enter a word:<input type="text" name="word"></input><br></br>
+            <input type="submit"></input>
+        </form>
+    </center>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+import java.awt.print.Book;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class NewServlet1 extends HttpServlet {
+
+    List<books> books1 = new ArrayList<>();
+
+    public void init() throws ServletException {
+        // initialize the list of books
+        books1.add(new books("THE ALCHEMIST", "PAULO COELHO"));
+        books1.add(new books("HARRY POTTER AND THE DEATHLY HALLOWS", "J.K.ROWLING"));
+        books1.add(new books("PRIDE AND PREJUDICE", "JANE AUSTEN"));
+        books1.add(new books("IT ENDS WITH US", "COLEEN HOOVER"));
+    }
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String sortBy = request.getParameter("sort");
+
+        if ("title".equals(sortBy)) {
+            Collections.sort(books1, new TitleComparator());
+        } else if ("author".equals(sortBy)) {
+            Collections.sort(books1, new AuthorComparator());
+        }
+
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet NewServlet1</title>");
+            out.println("<style>");
+            out.println("body{");
+            out.println("align:center;");
+            out.println("color:blue;");
+            out.println("background-color:lightblue");
+            out.println("}");
+            out.println("table{");
+            out.println("text-align:center;");
+            out.println("border:3px solid blue;");
+            out.println("border-collapse:collapse;");
+            out.println("}");
+            out.println("tr{");
+            out.println("color:black");
+            out.println("}");
+            out.println("th{");
+            out.println("color:blue");
+            out.println("}");
+            out.println("</style>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<center>");
+            out.println("<h1>Book List</h1>");
+            out.println("<form>");
+            out.println("<select name='sort' onchange='this.form.submit();'>");
+            out.println("<option value=''>Sort By</option>");
+            out.println("<option value='title'>Title</option>");
+            out.println("<option value='author'>Author</option>");
+            out.println("</select>");
+            out.println("</form><br>");
+            out.println("</center>");
+            out.println("<center>");
+            out.println("<table border=1>");
+            out.println("<tr><th>TITLE</th><th>AUTHOR</th></tr>");
+            for (books book : books1) {
+                out.println("<tr><td>" + book.getTitle() + "</td><td>" + book.getAuthor() + "</td></tr>");
+            }
+            out.println("</table>");
+            out.println("</center>");
+
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+
+    public class books {
+
+        String title;
+        String author;
+
+        books(String t, String a) {
+            this.title = t;
+            this.author = a;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public String getAuthor() {
+            return author;
+        }
+    }
+
+    private static class TitleComparator implements Comparator<books> {
+
+        public int compare(books b1, books b2) {
+            return b1.getTitle().compareToIgnoreCase(b2.getTitle());
+        }
+    }
+
+    private static class AuthorComparator implements Comparator<books> {
+
+        public int compare(books b1, books b2) {
+            return b1.getAuthor().compareToIgnoreCase(b2.getAuthor());
+        }
+    }
+
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+   
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }
+
+}

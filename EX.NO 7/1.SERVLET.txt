@@ -1,0 +1,65 @@
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class NewServlet extends HttpServlet {
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {           
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet NewServlet</title>");
+            out.println("<style>"); 
+            out.println("body{"); 
+            out.println("background-color:pink;");  
+            out.println("font-family:courier new;");
+            out.println("font-size:30px;");
+            out.println("</style>");  
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<center>");  
+            out.println("<h1>Counting the number of vowels in the given String</h1>");
+            out.println("<b>The entered string is:"+request.getParameter("word") + "</b><br>");
+            String word=request.getParameter("word");
+            int vCount = 0;   
+            word = word.toLowerCase();            
+            for(int i = 0; i < word.length(); i++) {    
+            if(word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u') {    
+                vCount++;    
+            }    
+            }
+            out.println("<b>The number of vowels in the string is:"+vCount);
+            out.println("</center>");  
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
+
+   
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }
+
+}
