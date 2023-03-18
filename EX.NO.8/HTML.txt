@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Session</title>
+        <style>
+            body{
+                background-color:purple;
+                font-family:courier new;
+                margin-top:250px;
+                color:white;
+                font-size:30px
+            }
+        </style>
+    </head>
+    <body>
+    <center>
+        <form action="http://localhost:8080/WebApplication4/sessionServlet2" method="post">
+            <label for="inputWord">Select a time zone:</label>
+            <select name="timezone" id="timezone">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="zone1">GREENWICH MEAN TIME (GMT)</option>
+                <option value="zone2">INDIAN STANDARD TIME (IST)</option>
+                <option value="zone3">AUSTRALIA CENTRAL TIME (ACT)</option>
+                <option value="zone4">PACIFIC STANDARD TIME (PST)</option>
+                <option value="zone5">EASTERN STANDARD TIME (EST)</option>
+            </select>
+            <br><br>
+            <input type="submit">
+        </form>
+    </center>
+    </body>
+</html>
