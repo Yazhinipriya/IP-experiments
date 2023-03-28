@@ -1,0 +1,72 @@
+<%@page import="java.sql.*"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSP Page</title>
+        <style>
+            body{
+                background-image:url('appliances1.jpg');
+                background-repeat:no-repeat;               
+                background-size: cover;
+                background-height: 80%;
+                text-align:center;
+                font-color: white;
+                font-family:timesnewroman;
+                font-size:17px;
+                font-weight:600;
+            }
+            table{
+                width:20%;
+                height:40%;
+               
+               
+            }
+        </style>
+    </head>
+    <body>
+    <center>
+        <%
+           
+            Connection c = DriverManager.getConnection("jdbc:derby://localhost:1527/products");
+            
+            Statement st1 = c.createStatement();
+            ResultSet rs1 = st1.executeQuery("Select count(*) as total FROM product");
+            rs1.next();
+            int totalProducts = rs1.getInt("total");
+            out.println("1) The total number of products in the database is "+totalProducts);
+            out.println("<br>");
+            
+            Statement st2 = c.createStatement();
+            ResultSet rs2 = st2.executeQuery("Select avg(price) as totalPrice FROM product");
+            rs2.next();
+            int averagePrice = rs2.getInt("totalPrice");
+            out.println("2) The average price of products in the database is "+averagePrice);
+            out.println("<br>");  
+            
+            Statement st3 = c.createStatement();
+            ResultSet rs3 = st3.executeQuery("Select category,sum(price*quantity) as total from product group by category order by total DESC");
+            rs3.next();
+            int categoryMax = rs3.getInt("total");
+            out.println("3) The category with the highest total price is "+rs3.getString("category")+" and the maximum price is "+categoryMax);
+            out.println("<br>");  
+            out.println("<br>");          
+            out.println("<table border='2'>");
+            out.println("<tr>");
+            out.println("<th>TOTAL PRODUCTS</th>");
+            out.println("<td>"+totalProducts+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<th>AVERAGE PRICE</th>");
+            out.println("<td>"+averagePrice+"</td>");
+            out.println("</tr>");
+            out.println("<tr>");
+            out.println("<th>CATEGORY WITH <br> HIGHEST PRICE</th>");
+            out.println("<td>"+categoryMax+"</td>");
+            out.println("</tr>");
+            out.println("</table>");   
+           
+            %>
+    </center>
+    </body>
+</html>
