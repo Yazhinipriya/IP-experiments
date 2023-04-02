@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+
+    <style>
+        .error 
+        {
+            color: #FF0000;
+        }
+        div
+        {
+            text-indent:550px;
+        }
+    </style>
+
+</head>
+
+<body>  
+ 
+
+    <?php
+        $nameErr = $emailErr = $phoneErr = $countryErr = $genderErr = $addErr = $zipErr = $passErr = $verrErr ="";
+        $name = $email = $phone= $country = $gender = $address = $zip = $password = $verified ="";
+ 
+        if ($_SERVER["REQUEST_METHOD"] == "POST") 
+        {
+            //Checking the name using regex
+            if (empty($_POST["name"])) {
+
+                $nameErr = "Please enter a valid name";
+    
+            } 
+            else {
+    
+                $name = test_input($_POST["name"]);
+    
+            
+    
+                if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+    
+                $nameErr = "Only letters and white space allowed";
+    
+                }
+    
+            }
+              
+            //Checking Email using regex
+              if (empty($_POST["address"])) 
+              {
+                  $addErr = "*Please enter your address!";
+              } 
+              else 
+              {
+                  $address = test_input($_POST["address"]);                
+              }
+            
+            //Checking zipcode
+            if (empty($_POST["zipcode"])) 
+            {
+                $zipErr = "*Please enter your zipcode!";
+
+            } 
+            else 
+            {
+                $zip = test_input($_POST["zipcode"]);
+                if (!preg_match("/^[0-9]*$/",$zip)) {
+                    $zipErr = "*Please enter a valid zipcode!"; 
+                  }
+            }
+
+            //Checking country
+            if(strcmp($country,"Select")){
+                $countryErr="*Please choose a country!";
+            }
+
+            else{
+                $country= test_input($_POST["country"]);   
+                $countryErr="";            
+            }
+
+            //Checking gender
+            if (empty($_POST["gender"])) 
+            {
+                $genderErr = "*Please choose a gender!";
+            } 
+            else 
+            {
+                $gender = test_input($_POST["gender"]);
+            }
+
+           
+            //Checking mobile number
+            if (empty($_POST["mobile"])) 
+            {
+                $phoneErr = "*Please enter your Mobile No!";
+
+            } 
+            else 
+            {
+                $phone = test_input($_POST["mobile"]);
+                if (!preg_match("/^[1-9]\d{9}$/",$phone)) {
+                    $phoneErr = "*Please enter a valid number!";
+                    }
+            }
+
+            //Checking Email
+            if (empty($_POST["email"])) 
+            {
+                $emailErr = "*Please enter your Email address!";
+
+            } 
+            else 
+            {
+                $email = test_input($_POST["email"]);
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+                {
+                    $emailErr = "*Please enter a valid Email address!";
+                }
+            }
+            
+            //Checking Password 
+            if (empty($_POST["password"]))
+            {
+                $passErr = "*Please enter your password!";
+
+            } 
+            else
+            {
+                $password = $_POST["password"];
+
+                if (strlen($password) < 8) {
+                    $passErr= "*Password should be at least 8 characters long";
+                } 
+                else 
+                {
+                    $password = $_POST['password'];
+                }
+            }
+
+            //Password verification
+            if (empty($_POST["verify"]))
+            {
+                $verrErr = "*Please re-enter your password!";
+
+            } 
+            else
+            {
+                $verified = $_POST["verify"];
+                if (!strcmp($password,$verified)) {
+                    $verrErr= "*Password not same";
+                } 
+                else 
+                {
+                    $verified=$_POST["verify"];
+                }
+            }
+     }
+        //Getting the input from the form
+        function test_input($data) 
+        {    
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+    
+
+    ?>
+
+    <h2 style="text-indent:520px">PHP Form Validation Example</h2>
+
+    <div><p><span class="error">* required field</span></p></div>
+   
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+        <div> 
+        Name:<span class="error">*</span> 
+        <input type="text" name="name" value="<?php echo $name;?>">
+        <span class="error"> <?php echo $nameErr;?></span>
+        <br><br>
+        </div>
+
+        <div>
+        Address:<span class="error">*</span>
+        <input type="text" name="address">
+        <span class="error"> <?php echo $addErr;?></span>
+        <br><br>
+        </div>
+
+        <div>
+        Zipcode:<span class="error">*</span> 
+        <input type="text" name="zipcode" value="<?php echo $zip;?>">
+        <span class="error"> <?php echo $zipErr;?></span>
+        <br><br>
+        </div>
+
+        <div>
+        Country:<span class="error">*</span>
+        <select name="country">
+            <option>Select</option>
+            <option>Australia</option>
+            <option>India</option>
+            <option>America</option>
+            <option>Africa</option>
+        </select>
+        <span class="error"> <?php echo $countryErr;?></span>
+        <br><br>
+        </div>
+
+        <div>
+        Gender:<span class="error">*</span>
+        <label><input type="radio" name="gender" value= "Male"/>Male</label>
+        <label><input type="radio" name="gender" value="Female">Female</label>
+        <span class="error"> <?php echo $genderErr;?></span>
+        <br><br>
+        </div>
+
+        <div>
+        Preferences:<span class="error">*</span>
+        <label><input type="checkbox" name="preferences[]" value="Red" > Red</label>
+        <label><input type="checkbox" name="preferences[]" value="Green"> Green</label>
+        <label><input type="checkbox" name="preferences[]" value="Blue"> Blue</label>
+        <br><br>
+        </div>
+
+        <div>
+        Phone:<span class="error">*</span>
+        <input type="text" name="mobile" maxlength="10">
+        <span class="error"> <?php echo $phoneErr;?></span>
+        <br><br>
+        </div>
+
+        <div>
+        Email:<span class="error">*</span> 
+        <input type="text" name="email" value="<?php echo $email;?>">
+        <span class="error"> <?php echo $emailErr;?></span>
+        <br><br>
+        </div>
+
+        <div>
+        Password(6-8 characters):<span class="error">*</span>
+        <input type="text" name="password">
+        <span class="error"> <?php echo $passErr; ?></span>
+        <br><br>
+        </div>
+
+        <div>
+        Verify Password:<span class="error">*</span>
+        <input type="text" name="verify">
+        <span class="error"> <?php echo $verrErr; ?></span>
+        <br><br>
+        </div>
+
+        <center>
+            <input type="submit" name="submit" value="Proceed">
+        </center> 
+    </form>
+    
+
+    <?php
+
+        echo "<div>";
+        echo "<h2> Final Output:</h2>";
+		echo "</div>";
+        //Name
+		echo "<div>";
+        if($nameErr)
+        {
+            echo " ";
+        }
+        else{
+            echo $name;
+        }
+        echo "<br>";
+		echo "</div>";
+		
+        //Address
+		echo "<div>";
+        if($addErr)
+        {
+            echo " ";
+        }
+        else{
+            echo $address;
+        }
+        echo "<br>";
+		echo "</div>";
+		
+        //Zipcode
+		echo "<div>";
+        if($zipErr)
+        {
+            echo " ";
+        }
+        else{
+            echo $zip;
+        }
+        echo "<br>";
+		echo "</div>";
+		
+		//Country      
+		echo "<div>";
+        $selected_option = $_POST['country'];
+        echo $selected_option;
+		echo "<br>";
+		echo "</div>";
+
+        //Gender
+		 echo "<div>";
+         if (isset($_POST['gender'])) {
+           $selected_gender = $_POST['gender'];
+                 echo $selected_gender;
+         }
+		 echo "<br>";
+        echo "</div>";
+		
+         //Preferences
+		 echo "<div>";
+         if(!empty($_POST['preferences']))
+        {
+            foreach($_POST['preferences'] as $preference){
+            echo $preference."</br>"."<div>";
+            }
+        }
+       
+		echo "</div>";
+		
+
+        //Phone
+		echo "<div>";
+        if($phoneErr)
+        {
+            echo " ";
+        }
+        else{
+            echo $phone;
+        }
+        echo "<br>";
+        echo "</div>";
+		
+        //email
+		echo "<div>";
+        if($emailErr)
+        {
+            echo " ";
+        }
+        else{
+            echo $email;
+        }
+        echo "<br>";
+        echo "</div>";
+
+
+        
+
+    ?>
+
+</body>
+</html>
