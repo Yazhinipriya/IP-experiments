@@ -1,0 +1,43 @@
+package book;
+
+import java.util.*;
+
+public class books {
+    String Title;
+    String Author;
+    int ISBN;
+    double Price;
+   
+    public books(String title,String author,int ISBN,double price ){
+        this.Title=title;
+        this.Author = author;
+        this.ISBN = ISBN;
+        this.Price = price;
+    }
+     public void settitle(String title){
+        this.Title=title;
+    }
+     public void setauthor(String author){
+        this.Author= author;
+    }
+      public void setisbn(int ISBN){
+        this.ISBN= ISBN;
+    }
+       public void setprice(double price){
+        this.Price=price;
+    }
+         public String gettitle(){
+        return Title;
+    }
+       public String getauthor(){
+        return Author;
+    }
+       public int getisbn(){
+        return ISBN;
+    }
+       public double getprice(){
+        return Price;
+    }
+   
+}
+

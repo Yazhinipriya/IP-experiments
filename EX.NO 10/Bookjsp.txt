@@ -1,0 +1,84 @@
+<%@page import="java.util.*"%>
+<%@page import="book.books"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+      
+        <h1 align="center">SORTING BOOKS BASED ON PRICE IN ASCENDING ORDER</h1>
+        <%
+            List<books> booksList = new ArrayList<books>();
+            booksList.add(new books("BOOK1","JOHN DOE",1234567890 ,10.99));
+            booksList.add(new books("BOOK2","JANE SMITH",987654321,5.99));
+            booksList.add(new books("BOOK3","BOB JOHNSON",1357908642,20.50));
+            // add more countries as needed
+            pageContext.setAttribute("books1", booksList);
+        %>
+    <center>
+         <h1>BEFORE SORTING</h1>
+        <table cellpadding=20px; border="2" style="border-collapse: collapse;">
+                <tr>
+      <th>TITLE</th>
+      <th>AUTHOR</th>
+      <th>ISBN</th>
+      <th>PRICE</th>
+                   </tr>
+          <c:forEach items="${pageScope.books1}" var="books">
+                <tr>
+                    <td>${books.gettitle()}</td>
+                    <td>${books.getauthor()}</td>
+                    <td>${books.getisbn()}</td>
+                    <td>$${books.getprice()}</td>
+                </tr>
+            
+        </c:forEach>
+</table>
+        </center>
+    
+    
+    <% Collections.sort(booksList, new Comparator<books>() {
+                public int compare (books p1, books p2){
+                    if (p1.getprice() < p2.getprice()) 
+                    {
+                    return -1;
+                    } 
+                    else if (p1.getprice() > p2.getprice()) 
+                    {
+                    return 1;
+                    } 
+                    else 
+                    {
+                    return 0;
+                    }
+            }
+            });
+            %>
+             <center>
+        <h1>AFTER SORTING</h1>
+        <table cellpadding=20px; border="2px solid white" style="border-collapse:collapse;">
+                <tr>
+      <th>TITLE</th>
+      <th>AUTHOR</th>
+      <th>ISBN</th>
+      <th>PRICE</th>
+                   </tr>
+          <c:forEach items="${pageScope.books1}" var="books">
+                <tr>
+                    <td>${books.gettitle()}</td>
+                    <td>${books.getauthor()}</td>
+                    <td>${books.getisbn()}</td>
+                    <td>$${books.getprice()}</td>
+                </tr>
+                
+        </c:forEach>
+                
+        </table>
+        </center>
+    
+    </body>
+</html>
