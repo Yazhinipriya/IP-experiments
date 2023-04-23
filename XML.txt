@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<products>
+<product>
+    <name>ColorBar kajal</name>
+    <category>Beauty</category>
+    <price>49</price>
+    <availability>yes</availability>
+</product>
+
+<product>
+    <name>NYBeauty foundation</name>
+    <category>Beauty</category>
+    <price>1000</price>
+    <availability>no</availability>
+</product>
+
+<product>
+    <name>WowBeauty facewash</name>
+    <category>Skincare</category>
+    <price>300</price>
+    <availability>yes</availability>
+</product>
+
+<product>
+    <name>JokerWitch</name>
+    <category>Watch</category>
+    <price>6000</price>
+    <availability>no</availability>
+</product>
+
+<product>
+    <name>Necklace</name>
+    <category>Jewellery</category>
+    <price>30</price>
+    <availability>yes</availability>
+</product>
+
+</products>
